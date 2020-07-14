@@ -91,3 +91,15 @@ Response Object
 
 -sendRedirect
     *Redirect to a different location
+
+
+    Summary
+    In order to use servlets we'll need both the following:
+    The Java EE servlet libraries
+    A web server with a web container configured to interact with our servlet classes
+
+    Maven used to add the servlet library dependencies in our pom.xml
+    intelliJ used to compile and package our application as a WAR
+    Tomcat used to serve our application
+
+
