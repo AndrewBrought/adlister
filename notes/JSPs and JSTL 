@@ -37,6 +37,9 @@ JSP TAGS
 home.jsp
 JSP logic is being processed on the server side, only html is returned to "client"
 <%!String user = "Andrew"; %>
+<%!String firstname = "Andrew"; %>
+<%!String lastname = "Brought"; %>
+
 <%! int myNumber = 1; %>
 <%
     if(myNumber == 1){
@@ -47,6 +50,9 @@ JSP logic is being processed on the server side, only html is returned to "clien
 %>
 <body>
     <h1>Hello, <%= user %></h1>
+
+
+    <h1>Hello, <%= firstname %> <%= lastname %></h1>
 </body>
 
 
