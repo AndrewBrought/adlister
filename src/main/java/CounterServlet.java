@@ -17,14 +17,20 @@ public class CounterServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
 
-//         count += 1;
-
         String reset = request.getParameter("reset");
         if(reset == null){
             count += 1;
         } else {
             count = 1;
         }
+
+//        Bobbie's code
+//        String reset = request.getParameter("reset");
+//        if (reset.equalsIgnoreCase("y") || reset.equalsIgnoreCase("yes") ) {
+//            count = 1;
+//            out.println("<h1> You have reset the counter to " + count + ". </h1>");
+//        } else {
+//            count += 1;
 
         out.println("<h1>The Page count is: " + count + "</h1>");
 
