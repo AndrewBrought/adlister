@@ -1,0 +1,5 @@
+Servlets:
+-Handle HTTP requests and responses
+-Extends the HttpServlet
+-Allows us to create dynamic web pages with Java
+-Each additional url requires a new servlet
