@@ -8,10 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>HEAD</title>
+    <title>${param.title}</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>This Contains Link Elements to CSS Style Sheets</h1>
+
 
 </body>
 </html>

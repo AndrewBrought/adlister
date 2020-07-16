@@ -1,6 +1,7 @@
-package model;
+package models;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class McBurger implements Serializable {
     // ************* Class Properties ************** //
@@ -19,7 +20,7 @@ public class McBurger implements Serializable {
 
 //    *************  CONSTRUCTOR ************ //
 
-//    ser0-argument contructor - this is saying this burger equals new burger (no arguments) then we can add what we want afterwards without a null pointer exception.
+//    zero-argument contructor - this is saying this burger equals new burger (no arguments) then we can add what we want afterwards without a null pointer exception.
     public McBurger(){}
 
     //    *************  GETTERS AND SETTERS ************ //
