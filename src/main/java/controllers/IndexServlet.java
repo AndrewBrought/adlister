@@ -26,6 +26,7 @@ public class IndexServlet extends HttpServlet {
         allBurgers.add(burgerDao.findById(1));
         allBurgers.add(burgerDao.findById(2));
         allBurgers.add(burgerDao.findById(3));
+        System.out.println(allBurgers);
 
         req.setAttribute("allBurgers", allBurgers);
         req.getRequestDispatcher("/index.jsp").forward(req,resp);
