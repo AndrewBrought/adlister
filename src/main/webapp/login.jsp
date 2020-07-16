@@ -26,14 +26,14 @@
 
 <c:choose>
     <c:when test="${param.testname.equalsIgnoreCase('admin') && param.testpassword.equalsIgnoreCase('password123')}" >
-        <% response.sendRedirect("/partials/profile.jsp"); %>
         <p>You are viewing this as an Admin.</p>
         <%@ include file="/partials/adminnav.jsp"%>
+        <% response.sendRedirect("/partials/profile.jsp"); %>
     </c:when>
-<%--    <c:otherwise>--%>
-
+    <c:otherwise>
+<%--        <h1>You're not an admin...</h1>--%>
 <%--&lt;%&ndash;        <% response.sendRedirect("/login.jsp"); %>&ndash;%&gt;--%>
-<%--    </c:otherwise>--%>
+    </c:otherwise>
 </c:choose>
 
 
