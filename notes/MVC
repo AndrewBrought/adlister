@@ -1,0 +1,55 @@
+
+ =============      MVC      ==============
+MVC = Model View Controller  (allows us to achieve separation of concerns...we want our code to be intertwined or rely on other code as little as possible)
+
+Will slow performance a tad bit...but the trade off is worth it to prevent clashing of code breaking an entire app
+
+Can think of this like: Model Controller View
+
+Model basically represents a database table (properties in a class)
+
+We use MVC layout so that we can use the controller to retrieve what ever info we want...even if we decide to change database
+Controller doesn't know what kind of data we have, it just knows to retrieve it
+
+Trying to get away from one huge code file that would break everything if we change something
+
+MVC example:
+Model = Class Burger (Properties: id - menu number, title - big mac, price)
+View = touchscreen that shows menu (list of everything that's available)  View goes to controller and says: "these are the things that we want"
+Controller gets - sends back to view (Controller is the chef)
+Model holds the recipe (properties) controller tells model to explain what's needed so that it can GET all things needed and put together - then presents back to you, the customer via VIEW
+
+Model:
+Asks what is it? (burger, ingredient, how is it defined, what is the data that we're working with, etc.)
+our example: Burger.java, Ingredient.Java
+
+View:
+Display it on the front end
+our example: McD menu.jsp (presenting everything to us)
+
+Controller:
+Do some logic on it (lets get the burger by id, get ingredients, get price from Model)
+our example: making the burgers and send them back to the view
+
+Model:
+Bean (class that is a single item) ex: ingredient 'bean', burger 'bean'
+db table representation (Bean properties: Id, name, price, description)
+
+Class List Burgers - implements Data Access Object Interface (D.A.O.)
+
+Burgers Interface - allows us to connect with Burger model (D.A.O. Interface)
+
+DaoFactory - for every model that we have, this factory will have a link to the different DAO Interfaces
+Class for access our DAO
+
+Model is used to define our data, a way to access it without direct access to the bean
+Model Data/Database Table
+
+
+
+
+
+
+
+
+
