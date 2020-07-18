@@ -10,7 +10,7 @@ import java.io.IOException;
 public class SettingsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.getRequestDispatcher("/settings.jsp").forward(req,res);
+        req.getRequestDispatcher("/WEB-INF/settings.jsp").forward(req,res);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
