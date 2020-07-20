@@ -25,17 +25,17 @@ public class JDBCLecture {
             // ======================== GETTING A SINGLE AND LIST OF RESULTS
 
             String query = "SELECT * FROM albums";
+////
+//            ResultSet rs = statement.executeQuery(query);
 //
-            ResultSet rs = statement.executeQuery(query);
-
-            rs.next();
-
-            System.out.println(rs.getString(1));
-            System.out.println(rs.getString(2));
-            System.out.println(rs.getString(3));
-            System.out.println(rs.getString(4));
-            System.out.println(rs.getString(5));
-            System.out.println(rs.getString(6));
+//            rs.next();
+//
+//            System.out.println(rs.getString(1));
+//            System.out.println(rs.getString(2));
+//            System.out.println(rs.getString(3));
+//            System.out.println(rs.getString(4));
+//            System.out.println(rs.getString(5));
+//            System.out.println(rs.getString(6));
 //
 //            rs.beforeFirst(); // also rs.previous()
 //
@@ -60,17 +60,17 @@ public class JDBCLecture {
             // ======================== ALBUM MODEL
 
 //            rs.beforeFirst();
-            rs.next();
-
-            Album album = new Album(rs.getLong("id"),
-                rs.getString("artist"),
-                rs.getString("name"),
-                rs.getInt("release_date"),
-                rs.getDouble("sales"),
-                rs.getString("genre")
-            );
-
-            System.out.println(album);
+//            rs.next();
+//
+//            Album album = new Album(rs.getLong("id"),
+//                    rs.getString("artist"),
+//                    rs.getString("name"),
+//                    rs.getInt("release_date"),
+//                    rs.getDouble("sales"),
+//                    rs.getString("genre")
+//            );
+//
+//            System.out.println(album);
 
 //            System.out.println(album.getId());
 //            System.out.println(album.getArtist());
@@ -81,24 +81,24 @@ public class JDBCLecture {
 
 //             ======================== UPDATE A RECORD
 
-            Album updateAlbum = new Album(
-                    2,
-                    "Prince",
-                    "Purple Rain",
-                    1984,
-                    50,
-                    "amazing"
-            );
-
-            String updateQuery = String.format("UPDATE albums SET artist = '%s', name = '%s', release_date = %d, sales = %f, genre = '%s' WHERE id = %d",
-                    updateAlbum.getArtist(),
-                    updateAlbum.getName(),
-                    updateAlbum.getReleaseDate(),
-                    updateAlbum.getSales(),
-                    updateAlbum.getGenre(),
-                    updateAlbum.getId()
-            );
-            System.out.println(updateQuery);
+//            Album updateAlbum = new Album(
+//                    2,
+//                    "Prince",
+//                    "Purple Rain",
+//                    1984,
+//                    50,
+//                    "amazing"
+//            );
+//
+//            String updateQuery = String.format("UPDATE albums SET artist = '%s', name = '%s', release_date = %d, sales = %f, genre = '%s' WHERE id = %d",
+//                    updateAlbum.getArtist(),
+//                    updateAlbum.getName(),
+//                    updateAlbum.getReleaseDate(),
+//                    updateAlbum.getSales(),
+//                    updateAlbum.getGenre(),
+//                    updateAlbum.getId()
+//            );
+//            System.out.println(updateQuery);
 
 //            boolean success = statement.execute(updateQuery);
 
@@ -107,33 +107,38 @@ public class JDBCLecture {
 
             // ======================== INSERTING A RECORD
 
-//            Album brandNewAlbum = new Album(
-//                "The Cure",
-//                "Disintegration",
-//                1989,
-//                15,
-//                "alt, goth, rock"
-//            );
-//
-//            String insertQuery = String.format("INSERT INTO albums (artist, name, release_date, sales, genre) VALUES ('%s', '%s', %d, %f, '%s')",
-//                brandNewAlbum.getArtist(),
-//                brandNewAlbum.getName(),
-//                brandNewAlbum.getReleaseDate(),
-//                brandNewAlbum.getSales(),
-//                brandNewAlbum.getGenre()
-//            );
-//
-//            statement.executeUpdate(insertQuery, Statement.RETURN_GENERATED_KEYS);
-//            ResultSet rs = statement.getGeneratedKeys();
-//
-//            if (rs.next()) {
-//                System.out.println("Inserted id is: " + rs.getLong(1));
-//            }
+            Album brandNewAlbum = new Album(
+                    "The Cure",
+                    "Disintegration",
+                    1989,
+                    15,
+                    "alt, goth, rock"
+            );
 
+            //Create our query with this format
+            String insertQuery = String.format("INSERT INTO albums (artist, name, release_date, sales, genre) VALUES ('%s', '%s', %d, %f, '%s')",
+                    brandNewAlbum.getArtist(),
+                    brandNewAlbum.getName(),
+                    brandNewAlbum.getReleaseDate(),
+                    brandNewAlbum.getSales(),
+                    brandNewAlbum.getGenre()
+            );
+            System.out.println(insertQuery);
 
+            // This constant is defining that we want to return the result set of the created id(s)
+            statement.executeUpdate(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            // This result set just contains one result
+            ResultSet rs = statement.getGeneratedKeys();
+//
+            if (rs.next()) {
+                System.out.println("Inserted id is: " + rs.getLong(1));
+            }
+//
+//
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
 }

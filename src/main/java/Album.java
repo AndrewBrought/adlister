@@ -7,6 +7,14 @@ public class Album {
     private double sales;
     private String genre;
 
+    public Album(String artist, String name, int releaseDate, double sales, String genre) {
+        this.artist = artist;
+        this.name = name;
+        this.releaseDate = releaseDate;
+        this.sales = sales;
+        this.genre = genre;
+    }
+
     public Album(long id, String artist, String name, int releaseDate, double sales, String genre) {
         this.id = id;
         this.artist = artist;
