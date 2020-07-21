@@ -11,6 +11,9 @@
 
 <div class="container">
     <h1>Here are all the ads!</h1>
+    <div>
+        <a href="/create"><button class="btn btn-block btn-secondary">Add an ad</button></a>
+    </div>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
@@ -19,9 +22,7 @@
         </div>
     </c:forEach>
 </div>
-<div>
-    <button><a href="/create">Add an ad</a></button>
-</div>
+
 
 </body>
 </html>
