@@ -1,4 +1,6 @@
 import com.mysql.cj.jdbc.Driver;
+import models.Album;
+
 import java.sql.*;
 
 public class JDBCLecture {
@@ -62,7 +64,7 @@ public class JDBCLecture {
 //            rs.beforeFirst();
 //            rs.next();
 //
-//            Album album = new Album(rs.getLong("id"),
+//            models.Album album = new models.Album(rs.getLong("id"),
 //                    rs.getString("artist"),
 //                    rs.getString("name"),
 //                    rs.getInt("release_date"),
@@ -81,7 +83,7 @@ public class JDBCLecture {
 
 //             ======================== UPDATE A RECORD
 
-//            Album updateAlbum = new Album(
+//            models.Album updateAlbum = new models.Album(
 //                    2,
 //                    "Prince",
 //                    "Purple Rain",
