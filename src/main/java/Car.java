@@ -2,14 +2,15 @@ public class Car{
     private long id;
     private String make;
     private String model;
-    private int year;
+    private String year;
 
-    public Car(long id, String make, String model, int year) {
+    public Car(long id, String make, String model, String year) {
         this.id = id;
         this.make = make;
         this.model = model;
         this.year = year;
     }
+
 
     public long getId() { return id; }
 
@@ -23,7 +24,7 @@ public class Car{
 
     public void setModel(String model) { this.model = model; }
 
-    public int getYear() { return year; }
+    public String getYear() { return year; }
 
-    public void setYear(int year) { this.year = year; }
+    public void setYear(String year) { this.year = year; }
 }

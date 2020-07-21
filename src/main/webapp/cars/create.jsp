@@ -20,7 +20,11 @@
             <label for="model">Model</label>
             <input id="model" name="model" class="form-control" type="text">
             <label for="year">Year</label>
-            <input id="Year" name="Year" class="form-control" type="text">
+            <input id="year" name="year" class="form-control" type="text">
+
+           <p>
+             <input type="submit" class="btn btn-primary btn-block" value="Add Car">
+           </p>
         </div>
     </form>
 </div>
