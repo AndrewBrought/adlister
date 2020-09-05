@@ -1,4 +1,8 @@
 *.iml
 target/
 .idea/
+
 notes/
+
+Config.java
+
