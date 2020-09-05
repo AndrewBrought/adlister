@@ -52,8 +52,64 @@ JSP logic is being processed on the server side, only html is returned to "clien
     <h1>Hello, <%= user %></h1>
 
 
-    <h1>Hello, <%= firstname %> <%= lastname %></h1>
+    <h1>Hello, <%= firstname + " " + lastname %></h1>
 </body>
 
+
+JSP Implicit Objects
+-request
+-response
+-out
+
+<%
+ String firstname = request.getParameter("firstname");
+if(firstname.equals("sophie")){
+    //This is how you redirect someone to a different page
+        response.sendRedirect("/index.jsp")
+}
+%>
+
+Expression Language:
+EL
+makes it easy to access attributes from a request object
+Syntax: ${} (like jQuery)
+provides us with more implicit objects
+
+<% request.setAttribute("number", 12); %>
+Attribute vs parameter
+When you send something over as a parameter, it gets returned as a string...
+If you want to set a property that is actually an object - you can't
+This is why we have the ability to set an Attribute
+
+requests are established in servlet and pass an object from one jsp to another
+
+Parameter's can only return strings
+request.getParameter("username") is the same as the Expression Language version ${param.username}
+
+Syntax for accessing attribute on a request
+<h3>${'attribute name'}</h3>
+
+This is an instance variable
+int myNumber = 1;
+
+this is how we set an attribute on the request
+<% request.setAttribute("title", "Home Page"); %>
+
+<c:choose>
+(if)
+ <c:when test="${boolean_expression_1}">
+        <p>boolean_expression_1 was true</p>
+    </c:when>
+
+    (else if)
+    <c:when test="${boolean_expression_2}">
+        <p>boolean_expression_1 was false, and boolean_expression_2 was true</p>
+    </c:when>
+
+    (else / default)
+    <c:otherwise>
+        <p>none of the above tests were true</p>
+    </c:otherwise>
+</c:choose>
 
 
