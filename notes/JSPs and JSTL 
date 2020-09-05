@@ -1,0 +1,59 @@
+
+Java Server Pages (JSP)
+Technology used to develop dynamic server pages
+Provides us a syntax to mix Java code with our HTML
+Makes it easier to create HTML pages without having to return from servlet
+
+Servlets                             JSPs
+HTML inside of Java              Java inside of HTML
+Live in src/main/java         Live in src/main/webapp
+
+
+checkout to a specific tag jsp-jstl
+
+JSP Directives
+To set conditions that apply to the entire JSP
+Syntax
+<%@ directive attribute="value" %>
+
+Types of Directives
+Page directives: apply to all page
+Include directives: include other files
+Taglib directives: add tag libraries
+
+JSP TAGS
+<% %>
+-evaluate a block of java statements
+
+<%= =%>
+-outputs the result of an expression
+
+<%-- --%>
+-JSP comments
+
+<%! %>
+-To define instance variables
+
+home.jsp
+JSP logic is being processed on the server side, only html is returned to "client"
+<%!String user = "Andrew"; %>
+<%!String firstname = "Andrew"; %>
+<%!String lastname = "Brought"; %>
+
+<%! int myNumber = 1; %>
+<%
+    if(myNumber == 1){
+
+    }else{
+
+    }
+%>
+<body>
+    <h1>Hello, <%= user %></h1>
+
+
+    <h1>Hello, <%= firstname %> <%= lastname %></h1>
+</body>
+
+
+

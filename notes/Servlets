@@ -1,0 +1,105 @@
+Servlets:
+-Handle HTTP requests and responses
+-Extends the HttpServlet
+-Allows us to create dynamic web pages with Java
+-Each additional url requires a new servlet
+
+In order to use servlets, we'll need several things:
+The servlet libraries
+A Web Server that will interact our servlet classes
+A setup that ties this all together (project structure)
+
+In order to use servlets, we must have a servlet (or web) container:
+**web container wraps all of our servlets - listens to requests and routes them appropriately
+-Part of a web server that interacts with the java servlets
+-Many Java web servers also contain a web container
+-We will be using apache tomcat for this course
+
+TOMCAT
+Tomcat expects our file to be deployed as a WAR
+-Web application ARchive
+- A JAR file with a specific structure
+
+**Our project structure is all of our code that gets compiled into WAR file
+web.xml is one way to configure application and manage servlets
+We use a more modern way with an annotation version
+
+< --- project root
+pom.xml
+src/main/
+java/      < --- your classes, including serrvlets, etc.
+
+
+
+
+
+
+USING SERVLETS
+1. Create Servlet Class
+a. Common naming convention: ViewAllProductsServlet
+b. Extends HttpServlet
+
+2. Add @WebServlet annotation
+a. name and url pattern
+
+3. Create protected doGet and/or doPost
+a. httpServletRequest
+b.httpServletResponse
+
+**when intelliJ advises to throw an exception - trust it.
+
+ANNOTAIONS
+@AnnotationName
+@WebServlet(name = "SomeServlet", urlPatterns = "/some/path")
+
+
+@WEbServlet(name = "HelloServlet", urlPatterns = "/hello")
+public class HelloServlet extends HttpServlet {
+
+@Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    response.setContentType("text/html");
+    //Print writer is like a sout, but allows us to print html to our client
+    PrintWriter out = response.getWriter();
+    out.println("<h1>Hello Ganymede!</h1>");
+    }
+}
+
+
+COMMON SERVLET METHODS:
+Request Object
+- getParameter
+ *Get a parameter passed in the GET of POST request
+
+ -getSession
+   *Get the session Object
+
+-setAttribute
+    *Used to pass info from our servlet to view (more to come on this later...)
+
+
+getParameter
+
+http://wwww.youtube.com/results?search_query=cats
+
+String query = request.getParameter("search_query");
+
+Response Object
+
+-getWriter
+    *Used to write to the http response
+
+-sendRedirect
+    *Redirect to a different location
+
+
+    Summary
+    In order to use servlets we'll need both the following:
+    The Java EE servlet libraries
+    A web server with a web container configured to interact with our servlet classes
+
+    Maven used to add the servlet library dependencies in our pom.xml
+    intelliJ used to compile and package our application as a WAR
+    Tomcat used to serve our application
+
+
